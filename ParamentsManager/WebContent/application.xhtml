@@ -1,0 +1,171 @@
+<ui:composition template="/templates/layout.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui">
+     <ui:define name="content">
+		<h:messages/>
+		
+		<h:form id="form" onLoad="reset()">
+			<p:growl id="msgs" showDetail="true" sticky="false" /> 
+		    <p:dataTable var="app" value="#{ApplicationControllerBean.lazyModel}" paginator="true" rows="10"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				rowsPerPageTemplate="5,10,15" selection="#{ApplicationControllerBean.selectedApplications}" id="dataTable" lazy="true">
+				
+				<f:facet name="header">
+                    Application List
+                </f:facet>  
+	
+				<p:column selectionMode="multiple" style="width:2%" />  
+		        <p:column headerText="ID">
+		            <!-- <h:outputText value="#{app.applicationID}" />  -->
+		            
+		              <p:commandLink value="#{app.applicationID}" update=":applicationDetailForm:display" oncomplete="applicationDialog.show()"  title="View">
+                        <f:setPropertyActionListener value="#{app}" target="#{ApplicationControllerBean.selectedApplication}" />    
+                     </p:commandLink>
+                    
+		        </p:column>
+		
+		        <p:column headerText="Name" >
+		            <h:outputText value="#{app.applicationName}" />
+		        </p:column>
+		        
+		        <p:column headerText="Host" >
+		            <h:outputText value="#{app.applicationHostIP}" />
+		        </p:column>
+		        
+		        <p:column headerText="Status" >
+		            <h:outputText value="#{app.applicationStatus}" />
+		        </p:column>
+		        
+				<f:facet name="footer">
+					<p:commandButton value="New Application" oncomplete="newApplicationDialog.show()" icon="ui-icon-star" title="Creates new Application"/>
+					<p:commandButton value="Delete Applications" actionListener="#{ApplicationControllerBean.doDelete}" update=":form:dataTable,:form:msgs" icon="ui-icon-trash"/>
+				</f:facet>
+		   </p:dataTable>
+		   
+
+		</h:form>
+		
+		<p:dialog header="Application Detail" widgetVar="applicationDialog" resizable="false" id="applicationDlg" > 
+			 <h:form id="applicationDetailForm">
+				<p:panelGrid id="display" columns="2" cellpadding="4" style="margin:0 auto;">   
+					<h:outputText value="ID :"></h:outputText>
+					<h:outputText value="#{ApplicationControllerBean.selectedApplication.applicationID}" />
+	
+					<h:outputText value="Name :"></h:outputText>
+					<h:inputText value="#{ApplicationControllerBean.selectedApplication.applicationName}" required="true" requiredMessage="Please Enter Name!" maxlength="50">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</h:inputText>
+	
+					<h:outputText value="Host IP :"></h:outputText>
+					<h:inputText value="#{ApplicationControllerBean.selectedApplication.applicationHostIP}" required="true" requiredMessage="Please Enter Host IP!" maxlength="15" >
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+						<f:validator validatorId="ApplicationHostIPValidator"/>
+					</h:inputText>
+	
+					<h:outputText value="Status :"></h:outputText>
+					<h:selectOneMenu value="#{ApplicationControllerBean.selectedApplication.applicationStatus}">
+       					 <f:selectItem itemLabel="Active" itemValue="Active" />
+       					 <f:selectItem itemLabel="Inactive" itemValue="Inactive" />
+    				</h:selectOneMenu>
+	                        
+					<h:outputText value="Additional Param :"></h:outputText>
+					<h:inputText value="#{ApplicationControllerBean.selectedApplication.applicationAdditionalParam1}" maxlength="25">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</h:inputText>
+	
+					<h:outputText value="Additional Param :"></h:outputText>
+					<h:inputText value="#{ApplicationControllerBean.selectedApplication.applicationAdditionalParam2}" maxlength="25">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</h:inputText>
+	
+					<h:outputText value="Additional Param :"></h:outputText>
+					<h:inputText value="#{ApplicationControllerBean.selectedApplication.applicationAdditionalParam3}" maxlength="25">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</h:inputText>
+	
+					<f:facet name="footer">
+						<p:commandButton value="Update" update=":form:dataTable, :growl"  oncomplete="handleSubmitRequest(xhr, status, args, 'applicationDlg','newApplicationForm'); " actionListener="#{ApplicationControllerBean.doUpdate}"/>
+					</f:facet>
+				</p:panelGrid> 
+			</h:form>
+		</p:dialog> 
+	                         
+	             
+		<p:dialog header="Create New Application" onLoad="reset()" widgetVar="newApplicationDialog" resizable="false" id="newApplicationDlg" > 
+			<h:form id="newApplicationForm">
+				<p:panelGrid id="displayNewApplication" columns="2" cellpadding="4" style="margin:0 auto;">   
+					<h:outputText value="ID :"></h:outputText>
+					<p:inputText value="#{ApplicationControllerBean.newApplication.applicationID}" required="true" requiredMessage="Please Enter ID!" maxlength="10">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+						<f:validator validatorId="ApplicationIDNotDuplicateValidator"/>
+					</p:inputText>
+	
+					<h:outputText value="Name :"></h:outputText>
+					<p:inputText value="#{ApplicationControllerBean.newApplication.applicationName}" required="true" requiredMessage="Please Enter Name!" maxlength="50">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</p:inputText>
+	
+					<h:outputText value="Host IP :"></h:outputText>
+					<p:inputText value="#{ApplicationControllerBean.newApplication.applicationHostIP}" required="true" requiredMessage="Please Enter Host IP!" maxlength="15" >
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+						<f:validator validatorId="ApplicationHostIPValidator"/>
+					</p:inputText>
+	
+					<h:outputText value="Status :"></h:outputText>
+					<h:selectOneMenu value="#{ApplicationControllerBean.newApplication.applicationStatus}">
+       					 <f:selectItem itemLabel="Active" itemValue="Active" />
+       					 <f:selectItem itemLabel="Inactive" itemValue="Inactive" />
+    				</h:selectOneMenu>
+
+					<h:outputText value="Additional Param :"></h:outputText>
+					<p:inputText value="#{ApplicationControllerBean.newApplication.applicationAdditionalParam1}" maxlength="25">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</p:inputText>
+	
+					<h:outputText value="Additional Param :"></h:outputText>
+					<p:inputText value="#{ApplicationControllerBean.newApplication.applicationAdditionalParam2}" maxlength="25">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</p:inputText>
+	
+					<h:outputText value="Additional Param :"></h:outputText>
+					<p:inputText value="#{ApplicationControllerBean.newApplication.applicationAdditionalParam3}" maxlength="25">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</p:inputText>
+	
+
+					<f:facet name="footer">
+						<p:commandButton value="Submit" update=":form:dataTable, :growl"  oncomplete=" handleSubmitRequest(xhr, status, args, 'newApplicationDlg','newApplicationForm');" actionListener="#{ApplicationControllerBean.doCreate}"/>
+	                    <p:commandButton type="reset" value="Reset"></p:commandButton>                            
+	                </f:facet>
+				</p:panelGrid>  
+			</h:form>
+		</p:dialog> 
+	      
+		<p:growl id="growl" showDetail="true" life="5000" />
+	         
+		<script type="text/javascript">  
+	    	function handleSubmitRequest(xhr, status, args, dialogName, formName) 
+	    	{  
+	            dialog = jQuery('#'+dialogName);
+	        	if(args.validationFailed) 
+	            {  
+	            	dialog.effect("shake", { times:3 }, 100);  
+	        	} 
+	        	else 
+	            {
+		            clearForm(formName);
+		            newApplicationDialog.hide(); 
+		            applicationDialog.hide(); 
+	        	}  
+	    	}
+	    	function clearForm(formName)
+	    	{
+	        	jQuery('#'+formName).each(function() {	this.reset();});
+	    	}
+		</script> 
+		
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,25 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma  parameter="$anyType1" type="xs:anyType" ::)
+(:: pragma  type="xs:anyType" ::)
+
+declare namespace xf = "http://tempuri.org/Logger/transformation/ErrorRepository/";
+
+declare function xf:ErrorRepository()
+    as element(*) {
+			<service_error_handling xmlns="http://nl.xenta/services/errorRepository" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<error>
+				<code>BEA-382505</code>
+				<externalCode>VALIDATE-9999</externalCode>
+				<description>Validation of the XML payload failed</description>
+				<sourceSystem>OSB</sourceSystem>
+				<faultTransformer>ErrorHandling/errorRepository/GenericFault_To_SOAPFault</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>N</indLogging>
+				<indReporting>N</indReporting>
+			</error>
+		</service_error_handling>	
+};
+
+xf:ErrorRepository()

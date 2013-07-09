@@ -1,0 +1,48 @@
+xquery version "1.0" encoding "Cp1252";
+(:: pragma  type="xs:anyType" ::)
+
+declare namespace xf = "http://nl.xenta/services/errorRepository";
+
+declare function xf:service_error_handling()
+    as element(*) {
+		<service_error_handling xmlns="http://nl.xenta/services/errorRepository" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<error>
+				<code>BEA-382505</code>
+				<externalCode>VALIDATE-9999</externalCode>
+				<description>Validation of the XML payload failed</description>
+				<sourceSystem>OSB</sourceSystem>
+				<faultTransformer>ErrorHandling/errorRepository/GenericFault_To_SOAPFault</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>N</indLogging>
+				<indReporting>N</indReporting>
+			</error>
+			<error>
+				<code>BEA-380000</code>
+				<externalCode>GENERIC-1234</externalCode>
+				<description>General transport error occured</description>
+				<sourceSystem>SYSTEM-X</sourceSystem>
+				<faultTransformer>ErrorHandling/errorRepository/GenericFault_To_SOAPFault2</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>Y</indLogging>
+				<indReporting>Y</indReporting>
+			</error>
+			<error>
+				<code>DEFAULT</code>
+				<externalCode>XXX_DEFAULT_ERROR</externalCode>
+				<description>Something went wrong!</description>
+				<sourceSystem>NA</sourceSystem>
+				<faultTransformer>ErrorHandling/errorRepository/GenericFault_To_SOAPFault</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>Y</indLogging>
+				<indReporting>Y</indReporting>
+			</error>
+		</service_error_handling>
+};
+
+xf:service_error_handling()

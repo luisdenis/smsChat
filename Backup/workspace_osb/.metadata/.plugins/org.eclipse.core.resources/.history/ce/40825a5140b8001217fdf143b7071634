@@ -1,0 +1,16 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma  parameter="$anyType1" type="xs:anyType" ::)
+(:: pragma bea:global-element-return element="ns0:eLoggerException" location="../wsdl/Logger.wsdl" ::)
+
+declare namespace xf = "http://tempuri.org/Logger/transformation/LoggerFault/";
+declare namespace ns1 = "http://services.tigo.com.gt/Error/V1";
+declare namespace ns0 = "http://services.tigo.com.gt/Logger/types";
+
+declare function xf:LoggerFault($anyType1 as element(*))
+    as element(ns0:eLoggerException) {
+        <ns0:eLoggerException/>
+};
+
+declare variable $anyType1 as element(*) external;
+
+xf:LoggerFault($anyType1)

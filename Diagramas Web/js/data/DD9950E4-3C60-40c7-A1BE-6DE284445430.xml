@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.8:1", "", "CU-8", "EARoot/EA8/EA45.htm", "185.png", "21", "0", "", "Sequence diagram0","{CCD2AA12-7763-4e58-9F97-B10E0AA87D4C}");
+tocTab[tocTab.length] = new Array("0.8:2", "", "Envío de mensajes de resultado de operación a ambos usuarios", "EARoot/EA8/EA47.htm", "101.png", "144", "0", "", "InteractionFragment0","{DC397F5D-6DED-4eb5-A69B-B34BF0102998}");

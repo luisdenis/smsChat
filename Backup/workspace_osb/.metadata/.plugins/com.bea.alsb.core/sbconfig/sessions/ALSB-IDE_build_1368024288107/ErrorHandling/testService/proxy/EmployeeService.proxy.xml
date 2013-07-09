@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+  <ser:coreEntry isProxy="true" isEnabled="true">
+    <ser:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
+      <con:wsdl ref="ErrorHandling/testService/wsdl/EmployeeService"/>
+      <con:binding>
+        <con:name>EmployeeServiceBinding</con:name>
+        <con:namespace>http://new.webservice.namespace</con:namespace>
+      </con:binding>
+      <con:selector type="SOAP body"/>
+    </ser:binding>
+    <ser:monitoring isEnabled="false">
+      <ser:aggregationInterval>10</ser:aggregationInterval>
+      <ser:pipelineMonitoringLevel>Pipeline</ser:pipelineMonitoringLevel>
+    </ser:monitoring>
+    <ser:reporting>true</ser:reporting>
+    <ser:logging isEnabled="true">
+      <ser:logLevel>debug</ser:logLevel>
+    </ser:logging>
+    <ser:sla-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:sla-alerting>
+    <ser:pipeline-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:pipeline-alerting>
+    <ser:ws-policy>
+      <ser:binding-mode>wsdl-policy-attachments</ser:binding-mode>
+    </ser:ws-policy>
+  </ser:coreEntry>
+  <ser:endpointConfig>
+    <tran:provider-id>http</tran:provider-id>
+    <tran:inbound>true</tran:inbound>
+    <tran:URI>
+      <env:value>/ErrorHandling/proxy/EmployeeService</env:value>
+    </tran:URI>
+    <tran:inbound-properties/>
+    <tran:all-headers>false</tran:all-headers>
+    <tran:provider-specific>
+      <http:inbound-properties/>
+    </tran:provider-specific>
+  </ser:endpointConfig>
+  <ser:router errorHandler="_onErrorHandler-3139239297253809820-23fa246c.1332782a9c5.-7db0">
+    <con:pipeline type="error" name="_onErrorHandler-3139239297253809820-23fa246c.1332782a9c5.-7db0">
+      <con:stage name="errorHandling">
+        <con:context/>
+        <con:actions>
+          <con3:assign varName="errorhandler_request">
+            <con2:id>_ActionId-1251860051696490444-2d2e8d5b.13328223c2c.-7fff</con2:id>
+            <con3:expr>
+              <con2:xqueryTransform>
+                <con2:resource ref="ErrorHandling/testService/xquery/constructErrorHandlingInput"/>
+                <con2:param name="inbound">
+                  <con2:path>$inbound</con2:path>
+                </con2:param>
+                <con2:param name="fault">
+                  <con2:path>$fault</con2:path>
+                </con2:param>
+                <con2:param name="body">
+                  <con2:path>$body_temp</con2:path>
+                </con2:param>
+              </con2:xqueryTransform>
+            </con3:expr>
+          </con3:assign>
+          <con3:wsCallout>
+            <con2:id>_ActionId-3139239297253809820-23fa246c.1332782a9c5.-7d4c</con2:id>
+            <con3:service xsi:type="ref:ProxyRef" ref="ErrorHandling/errorRepository/proxy/ErrorHandler" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            <con3:request>
+              <con3:payload>$errorhandler_request</con3:payload>
+            </con3:request>
+            <con3:response>
+              <con3:payload>errorhandler_response</con3:payload>
+            </con3:response>
+            <con3:requestTransform/>
+            <con3:responseTransform/>
+          </con3:wsCallout>
+          <con3:assign varName="body">
+            <con2:id>_ActionId-1251860051696490444-2d2e8d5b.13328223c2c.-7de5</con2:id>
+            <con3:expr>
+              <con2:xqueryText>&lt;soapenv:Body xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+{$errorhandler_response}
+&lt;/soapenv:Body></con2:xqueryText>
+            </con3:expr>
+          </con3:assign>
+          <con2:reply isError="true">
+            <con2:id>_ActionId-1251860051696490444-2d2e8d5b.13328223c2c.-7ef1</con2:id>
+          </con2:reply>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="request" name="PipelinePairNode1_request">
+      <con:stage name="stage1">
+        <con:context/>
+        <con:actions>
+          <con3:assign varName="body_temp">
+            <con2:id>_ActionId-1251860051696490444-2d2e8d5b.13328223c2c.-7b5c</con2:id>
+            <con3:expr>
+              <con2:xqueryText>$body</con2:xqueryText>
+            </con3:expr>
+          </con3:assign>
+          <con3:validate>
+            <con2:id>_ActionId-1251860051696490444-2d2e8d5b.13328223c2c.-7b5e</con2:id>
+            <con3:schema ref="ErrorHandling/testService/wsdl/EmployeeService"/>
+            <con3:schemaElement xmlns:emp="http://nl.xenta/services/employee">emp:employee_request</con3:schemaElement>
+            <con3:varName>body</con3:varName>
+            <con3:location>
+              <con2:xpathText>./*</con2:xpathText>
+            </con3:location>
+          </con3:validate>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:pipeline type="response" name="PipelinePairNode1_response"/>
+    <con:flow>
+      <con:pipeline-node name="PipelinePairNode1">
+        <con:request>PipelinePairNode1_request</con:request>
+        <con:response>PipelinePairNode1_response</con:response>
+      </con:pipeline-node>
+      <con:route-node name="RouteNode1">
+        <con:context/>
+        <con:actions>
+          <con1:route>
+            <con2:id>_ActionId-3139239297253809820-23fa246c.1332782a9c5.-7de7</con2:id>
+            <con1:service ref="ErrorHandling/testService/business/EmployeeService" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            <con1:operation>getEmployee</con1:operation>
+            <con1:outboundTransform/>
+            <con1:responseTransform/>
+          </con1:route>
+        </con:actions>
+      </con:route-node>
+    </con:flow>
+  </ser:router>
+</xml-fragment>

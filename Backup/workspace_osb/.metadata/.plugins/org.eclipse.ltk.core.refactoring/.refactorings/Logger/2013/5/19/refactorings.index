@@ -1,0 +1,8 @@
+1368024325880	Rename resource 'wsld'
+1368101431938	Rename resource 'ErrorRepository.xq'
+1368102799564	Rename resource 'ErrorRepository.xsd'
+1368103579401	Move 'LoggerErrorRepository.xq' to 'xsd'
+1368103589067	Rename resource 'LoggerErrorRepository.xq'
+1368103599630	Rename resource 'LoggerErrorRepository.xsd'
+1368103624046	Move 1 resources to 'faults'
+1368103641453	Rename resource 'LoggerError.xq'

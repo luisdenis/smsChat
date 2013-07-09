@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+    <converter>
+    	<description>StringTrimmerConverter</description>
+   	 	<converter-id>StringTrimmerConverter</converter-id>
+    	<converter-class>com.blve.jsf.converter.StringTrimmer</converter-class>
+	</converter>
+	<converter>
+    	<description>ApplicationComboConvert</description>
+   	 	<converter-id>ApplicationComboConvert</converter-id>
+    	<converter-class>com.blve.jsf.converter.ApplicationComboConvert</converter-class>
+	</converter>
+		<converter>
+    	<description>ParameterTypeComboConvert</description>
+   	 	<converter-id>ParameterTypeComboConvert</converter-id>
+    	<converter-class>com.blve.jsf.converter.ParameterTypeComboConvert </converter-class>
+	</converter>
+	<validator>
+		<validator-id>ApplicationHostIPValidator</validator-id>	
+		<validator-class>com.blve.jsf.validator.ApplicationHostIPValidator</validator-class>
+	</validator>
+	<validator>
+		<validator-id>ApplicationIDNotDuplicateValidator</validator-id>	
+		<validator-class>com.blve.jsf.validator.ApplicationIDNotDuplicateValidator</validator-class>
+	</validator>	
+	<!-- 
+	<factory>
+        <exception-handler-factory>
+            jsf.handler.CustomExceptionHandlerFactory
+        </exception-handler-factory>
+</factory>
+ -->
+</faces-config>

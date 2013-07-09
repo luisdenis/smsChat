@@ -1,0 +1,15 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma  parameter="$body" type="xs:anyType" ::)
+(:: pragma  parameter="$inbound" type="xs:anyType" ::)
+(:: pragma  parameter="$fault" type="xs:anyType" ::)
+(:: pragma  type="xs:anyType" ::)
+
+declare namespace xf = "http://tempuri.org/Logger/transformation/LoggerError/";
+
+declare function xf:LoggerError()
+as element(*) {
+    xs:anyType
+};
+
+
+xf:LoggerError()

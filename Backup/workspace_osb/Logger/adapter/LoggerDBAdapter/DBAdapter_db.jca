@@ -1,0 +1,12 @@
+<adapter-config name="DBAdapter" adapter="Database Adapter" wsdlLocation="DBAdapter.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/EAuditError" UIConnectionName="EAuditError" adapterRef=""/>
+  <endpoint-interaction portType="DBAdapter_ptt" operation="DBAdapter">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="ProcedureName" value="LOGGER_SP"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+    <output/>
+  </endpoint-interaction>
+
+</adapter-config>

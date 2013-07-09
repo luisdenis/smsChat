@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:error="http://services.tigo.com.gt/Error/V1"
+            xmlns="http://services.tigo.com.gt/LoggerException/V1"            
+            targetNamespace="http://services.tigo.com.gt/LoggerException/V1"
+            elementFormDefault="qualified">
+<xsd:import schemaLocation="error.xsd" namespace="http://services.tigo.com.gt/Error/V1"/>
+  <xsd:element name="LoggerException">
+      <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element ref="error:Error" />
+        </xsd:sequence>  
+      </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

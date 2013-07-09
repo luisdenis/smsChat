@@ -1,0 +1,4 @@
+tocTab[tocTab.length] = new Array("0.6:1", "", "CU-6a", "EARoot/EA6/EA36.htm", "185.png", "18", "0", "", "Sequence diagram0","{3B8A2DF2-47CF-48f7-9C7C-5ED9FDE2080D}");
+tocTab[tocTab.length] = new Array("0.6:2", "", "CU-6b", "EARoot/EA6/EA38.htm", "185.png", "19", "0", "", "Sequence diagram0","{D0E40545-8363-4bd8-9457-EDFC8433FA0A}");
+tocTab[tocTab.length] = new Array("0.6:3", "", "Envio de Mensajes de Notificación", "EARoot/EA6/EA40.htm", "101.png", "142", "0", "", "InteractionFragment0","{2B9E19E2-D2FC-4257-840C-E491615DFDFD}");
+tocTab[tocTab.length] = new Array("0.6:4", "", "On Error", "EARoot/EA6/EA41.htm", "101.png", "141", "0", "", "InteractionFragment0","{EA805B6D-8045-4d16-AD23-E920633D7368}");

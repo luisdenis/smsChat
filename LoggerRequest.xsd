@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://services.tigo.com.gt/LoggerRequest"
+            targetNamespace="http://services.tigo.com.gt/LoggerRequest"
+            elementFormDefault="qualified">
+  <xsd:element name="ApplicationID" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>
+        A sample element
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ActionID" type="xsd:string"/>
+  <xsd:element name="Description" type="xsd:string"/>
+  <xsd:element name="Timestamp" type="xsd:dateTime"/>
+</xsd:schema>

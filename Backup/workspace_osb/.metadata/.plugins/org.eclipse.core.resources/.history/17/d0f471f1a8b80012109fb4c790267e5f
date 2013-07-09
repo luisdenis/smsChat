@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-fragment xmlns:ser="http://www.bea.com/wli/sb/services" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:env="http://www.bea.com/wli/config/env" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:con1="http://www.bea.com/wli/sb/stages/config" xmlns:con2="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
+  <ser:coreEntry isProxy="true" isEnabled="true">
+    <ser:binding type="SOAP" isSoap12="false" xsi:type="con:SoapBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config">
+      <con:wsdl ref="Logger/wsdl/Logger"/>
+      <con:port>
+        <con:name>LoggerSOAP</con:name>
+        <con:namespace>http://services.tigo.com.gt/Logger/</con:namespace>
+      </con:port>
+      <con:selector type="SOAP body"/>
+    </ser:binding>
+    <ser:monitoring isEnabled="false">
+      <ser:aggregationInterval>10</ser:aggregationInterval>
+      <ser:pipelineMonitoringLevel>Pipeline</ser:pipelineMonitoringLevel>
+    </ser:monitoring>
+    <ser:reporting>true</ser:reporting>
+    <ser:logging isEnabled="true">
+      <ser:logLevel>debug</ser:logLevel>
+    </ser:logging>
+    <ser:sla-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:sla-alerting>
+    <ser:pipeline-alerting isEnabled="true">
+      <ser:alertLevel>normal</ser:alertLevel>
+    </ser:pipeline-alerting>
+    <ser:ws-policy>
+      <ser:binding-mode>wsdl-policy-attachments</ser:binding-mode>
+    </ser:ws-policy>
+  </ser:coreEntry>
+  <ser:endpointConfig>
+    <tran:provider-id>http</tran:provider-id>
+    <tran:inbound>true</tran:inbound>
+    <tran:URI>
+      <env:value>/Logger/proxy-service/LoggerPS</env:value>
+    </tran:URI>
+    <tran:inbound-properties/>
+    <tran:all-headers>false</tran:all-headers>
+    <tran:provider-specific>
+      <http:inbound-properties/>
+    </tran:provider-specific>
+  </ser:endpointConfig>
+  <ser:router>
+    <con:pipeline type="error" name="_onErrorHandler-6624293591383799368-46ae5e96.13e867a366f.-7d7e">
+      <con:stage name="stage1">
+        <con:context/>
+        <con:actions>
+          <con1:assign varName="errorList" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con4="http://www.bea.com/wli/sb/stages/alert/config" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config">
+            <con5:id xmlns:con5="http://www.bea.com/wli/sb/stages/config">_ActionId-335150647285031043-b2abe22.13e892e6aeb.-7fa5</con5:id>
+            <con1:expr>
+              <con5:xqueryTransform xmlns:con5="http://www.bea.com/wli/sb/stages/config">
+                <con5:resource ref="Logger/transformation/xsd/ErrorRepository"/>
+              </con5:xqueryTransform>
+            </con1:expr>
+          </con1:assign>
+          <con3:assign varName="errorMetadataDetails">
+            <con1:id>_ActionId-335150647285031043-b2abe22.13e892e6aeb.-7f86</con1:id>
+            <con3:expr>
+              <con1:dynamicXqueryTransform>
+                <con1:resourceExpr/>
+                <con1:param name="errorCode">
+                  <con1:path/>
+                </con1:param>
+                <con1:param name="errorList">
+                  <con1:path/>
+                </con1:param>
+              </con1:dynamicXqueryTransform>
+            </con3:expr>
+          </con3:assign>
+        </con:actions>
+      </con:stage>
+    </con:pipeline>
+    <con:flow>
+      <con:route-node name="RouteNode1" error-handler="_onErrorHandler-6624293591383799368-46ae5e96.13e867a366f.-7d7e">
+        <con:context>
+          <con1:userNsDecl namespace="http://xmlns.oracle.com/pcbpel/adapter/db/LoggerDBConnector/LoggerDBAdapter/DBAdapter" prefix="db"/>
+          <con1:varNsDecl namespace="http://services.tigo.com.gt/Logger/types" prefix="typ"/>
+          <con1:varNsDecl namespace="http://xmlns.oracle.com/pcbpel/adapter/db/sp/DBAdapter" prefix="dbad"/>
+        </con:context>
+        <con:actions>
+          <con2:route>
+            <con1:id>_ActionId-283314249265886143--30e5ce3.13e8492e84a.-7fbe</con1:id>
+            <con2:service ref="Logger/bussines-service/LoggerBS" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+            <con2:operation>DBAdapter</con2:operation>
+            <con2:outboundTransform>
+              <con3:replace varName="body" contents-only="true">
+                <con1:id>_ActionId-283314249265886143--30e5ce3.13e8492e84a.-7f9f</con1:id>
+                <con3:expr>
+                  <con1:xqueryTransform>
+                    <con1:resource ref="Logger/transformation/LoggerRequest"/>
+                    <con1:param name="eLoggerRequest1">
+                      <con1:path>$body/typ:eLoggerRequest</con1:path>
+                    </con1:param>
+                  </con1:xqueryTransform>
+                </con3:expr>
+              </con3:replace>
+            </con2:outboundTransform>
+            <con2:responseTransform>
+              <con3:replace varName="body" contents-only="true">
+                <con1:id>_ActionId-6624293591383799368-46ae5e96.13e867a366f.-7eb9</con1:id>
+                <con3:expr>
+                  <con1:xqueryTransform>
+                    <con1:resource ref="Logger/transformation/LoggerResponse"/>
+                    <con1:param name="outputParameters1">
+                      <con1:path>$body/dbad:OutputParameters</con1:path>
+                    </con1:param>
+                  </con1:xqueryTransform>
+                </con3:expr>
+              </con3:replace>
+              <con3:ifThenElse>
+                <con1:id>_ActionId-6624293591383799368-46ae5e96.13e867a366f.-7ee0</con1:id>
+                <con3:case>
+                  <con3:condition>
+                    <con1:xqueryText>$body/typ:eLoggerResponse/Code = '201'</con1:xqueryText>
+                  </con3:condition>
+                  <con3:actions>
+                    <con3:Error>
+                      <con1:id>_ActionId-6624293591383799368-46ae5e96.13e867a366f.-7e47</con1:id>
+                      <con3:errCode>LOG-201</con3:errCode>
+                      <con3:message>Invalid applicationID</con3:message>
+                    </con3:Error>
+                  </con3:actions>
+                </con3:case>
+                <con3:case>
+                  <con3:condition>
+                    <con1:xqueryText>$body/typ:eLoggerResponse/Code = '202'</con1:xqueryText>
+                  </con3:condition>
+                  <con3:actions>
+                    <con3:Error>
+                      <con1:id>_ActionId-6624293591383799368-46ae5e96.13e867a366f.-7e11</con1:id>
+                      <con3:errCode>LOG-202</con3:errCode>
+                      <con3:message>Unsaved Record</con3:message>
+                    </con3:Error>
+                  </con3:actions>
+                </con3:case>
+                <con3:default>
+                  <con3:assign varName="code">
+                    <con1:id>_ActionId-6624293591383799368-46ae5e96.13e867a366f.-7da9</con1:id>
+                    <con3:expr>
+                      <con1:xqueryText>'LOG-200'</con1:xqueryText>
+                    </con3:expr>
+                  </con3:assign>
+                </con3:default>
+              </con3:ifThenElse>
+            </con2:responseTransform>
+          </con2:route>
+        </con:actions>
+      </con:route-node>
+    </con:flow>
+  </ser:router>
+</xml-fragment>

@@ -1,0 +1,14 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma bea:global-element-parameter parameter="$outputParameters" element="ns0:OutputParameters" location="../adapter/LoggerDBAdapter/xsd/DBAdapter_sp.xsd" ::)
+
+declare namespace xf = "http://tempuri.org/Logger/transformation/LoggerResponse/";
+declare namespace ns0 = "http://xmlns.oracle.com/pcbpel/adapter/db/sp/DBAdapter";
+
+declare function xf:LoggerResponse($outputParameters as element(ns0:OutputParameters))
+    as xs:decimal {
+        xs:decimal
+};
+
+declare variable $outputParameters as element(ns0:OutputParameters) external;
+
+xf:LoggerResponse($outputParameters)

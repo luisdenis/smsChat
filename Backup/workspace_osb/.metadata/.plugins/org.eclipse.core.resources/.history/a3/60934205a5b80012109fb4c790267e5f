@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://nl.xenta/services/errorRepository" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://nl.xenta/services/errorRepository">
+	<xs:element name="service_error_handling">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="error" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="indReporting">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Y"/>
+				<xs:enumeration value="N"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="reason">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="description">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="description">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="sourceSystem">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="SYSTEM-X"/>
+				<xs:enumeration value="OSB"/>
+				<xs:enumeration value="NA"/>				
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="indLogging">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Y"/>
+				<xs:enumeration value="N"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="faultTransformer">
+		<xs:simpleType>
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="externalCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="XXX_DEFAULT_ERROR"/>
+				<xs:enumeration value="GENERIC-1234"/>
+				<xs:enumeration value="VALIDATE-9999"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="error">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="code"/>
+				
+				<xs:element ref="externalCode"/>
+				<xs:element ref="description"/>
+				<xs:element ref="sourceSystem"/>
+				<xs:element ref="faultTransformer"/>
+				<xs:element ref="indAlert"/>
+				<xs:element ref="indAlertOverwriteDestionation"/>
+				<xs:element ref="alertDestination"/>
+				<xs:element ref="indLogging"/>
+				<xs:element ref="indReporting"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="code">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="BEA-382505"/>
+				<xs:enumeration value="DEFAULT"/>
+				<xs:enumeration value="BEA-380000"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="indAlertOverwriteDestionation">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Y"/>
+				<xs:enumeration value="N"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="indAlert">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Y"/>
+				<xs:enumeration value="N"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="alertDestination">
+		<xs:complexType/>
+	</xs:element>
+</xs:schema>

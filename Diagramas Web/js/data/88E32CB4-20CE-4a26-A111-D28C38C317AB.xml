@@ -1,0 +1,2 @@
+tocTab[tocTab.length] = new Array("0.3:1", "", "CU-3", "EARoot/EA3/EA26.htm", "185.png", "13", "0", "", "Sequence diagram0","{69A27525-A73D-4a33-9BBE-C9D40F0D48BA}");
+tocTab[tocTab.length] = new Array("0.3:2", "", "Applies for Subscriber A and Subscriber B", "EARoot/EA3/EA28.htm", "101.png", "139", "0", "", "InteractionFragment0","{48671DE8-3592-46ad-9D6D-7CEE66B6FC7D}");

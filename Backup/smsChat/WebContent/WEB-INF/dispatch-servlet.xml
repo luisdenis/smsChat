@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="basename"><value>properties/views</value></property>
+		<property name="defaultParentView"><value>login</value></property>
+	</bean>
+
+
+	<bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+	    <property name="paramName"><value>siteLanguage</value></property>
+	</bean>
+	
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/>
+	
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	    <property name="interceptors">
+	        <list>
+	            <ref bean="localeChangeInterceptor"/>
+	        </list>
+	    </property>
+	      <property name="mappings">
+	        <props>
+	        	
+	         	<prop key="/auth.htm">authController</prop> 
+	            <prop key="/login.htm">indexController</prop>
+	            
+	            <prop key="/errorAccessDenied.htm">errorController</prop>
+	            <prop key="/home.htm">homeController</prop>
+	            <!-- SERVICE -->
+	            <prop key="/serviceUser.htm">serviceSearchController</prop>
+	            <prop key="/serviceDelete.htm">serviceDeleteController</prop>
+	            
+	            <prop key="/serviceStatus.htm">serviceStatusController</prop>
+	            <prop key="/promotion.htm">promotionController</prop>
+	            
+	            
+	        </props>
+	    </property>
+	</bean>
+
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        	<property name="basenames">
+			<list>
+				<value>properties/messages</value>
+				<value>properties/labels</value>
+				<value>config</value>
+			</list>
+		</property>
+    </bean>
+    
+   <!--   <bean id="fileSizeExceeds" class= "com.kiberno.denarioweb.controller.FileExceedsFileSizeLimitHandler" />
+    -->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+		<map>
+			<entry key="MaxUploadSizeExceededException" value="errorSizeExceeded"/>
+		</map>
+		</property>
+	</bean>
+<!-- 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	one of the properties available; the maximum file size in bytes
+    	<property name="maxUploadSize" value="256000"/>
+	</bean>
+ -->    
+<!-- ************* INDEX ************* -->
+    <bean id="indexController" class="com.blve.smschat.controller.IndexController">
+        <property name="successView" value="login"/>
+    </bean>
+<!-- ************* AUTH CONTROLLER ************* -->
+     <bean name="authController" class="com.blve.smschat.controller.AuthController">  
+		   <!-- <property name="userManager"><ref bean="userManager"/></property>  
+		   <property name="authManager"><ref bean="authManager"/></property> -->
+     </bean>
+     
+      <bean name="homeController" class="com.blve.smschat.controller.SimpleController">  
+		<property name="successView" value="home"/> 
+     </bean> 
+<!-- SERVICES CONTROLLER --> 
+	<bean name="serviceSearchController" class="com.blve.smschat.controller.SearchController">
+      	<property name="sessionForm" value="true"/>
+      	<property name="commandName"><value>search</value></property>
+        <property name="commandClass" value="com.blve.smschat.domain.Search"/>		
+        <property name="successView" value="serviceUser"/> 
+		<property name="manager"><ref bean="subscribeManager"/></property> 
+		<property name="validator">
+        	<bean class="com.blve.smschat.validator.SearchValidator"/>
+        </property>
+    </bean>
+     <bean name="serviceDeleteController" class="com.blve.smschat.controller.DeleteController">  
+     	<property name="manager"><ref bean="subscribeManager"/></property>
+     	 <property name="successView" value="serviceUserDelete"/> 
+    </bean>
+    
+    
+    <bean name="serviceStatusController" class="com.blve.smschat.controller.SearchController">
+      	<property name="sessionForm" value="true"/>
+      	<property name="commandName"><value>search</value></property>
+        <property name="commandClass" value="com.blve.smschat.domain.Search"/>		
+        <property name="successView" value="serviceStatus"/> 
+		<property name="manager"><ref bean="subscribeManager"/></property> 
+		<property name="validator">
+        	<bean class="com.blve.smschat.validator.SearchValidator"/>
+        </property>
+    </bean>
+    <bean name="promotionController" class="com.blve.smschat.controller.SearchController">
+      	<property name="sessionForm" value="true"/>
+      	<property name="commandName"><value>search</value></property>
+        <property name="commandClass" value="com.blve.smschat.domain.Search"/>		
+        <property name="successView" value="promotion"/> 
+		<property name="manager"><ref bean="subscribeManager"/></property> 
+		<property name="validator">
+        	<bean class="com.blve.smschat.validator.SearchValidator"/>
+        </property>
+    </bean>
+    
+    <!-- ************* PAGINAS DE ERROR  ************* -->        
+     <bean name="errorController" class="com.blve.smschat.controller.IndexController">  
+		<property name="successView" value="errorAccessDenied"/>
+     </bean>
+     <bean name="simpleController" class="com.blve.smschat.controller.SimpleController">  
+     </bean>
+    
+    
+     
+     
+</beans>

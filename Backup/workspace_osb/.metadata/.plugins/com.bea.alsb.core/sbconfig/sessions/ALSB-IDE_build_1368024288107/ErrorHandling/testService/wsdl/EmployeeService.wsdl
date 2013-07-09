@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:wsdlEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:wsdl><![CDATA[<wsdl:definitions targetNamespace="http://new.webservice.namespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://new.webservice.namespace" xmlns:ns="http://nl.xenta/services/employee">
+	<wsdl:import namespace="http://nl.xenta/services/employee" location="EmployeeService.xsd"/>
+	<wsdl:message name="NewMessageRequest">
+		<wsdl:part name="parameter" element="ns:employee_request"/>
+	</wsdl:message>
+	<wsdl:message name="NewMessageResponse">
+		<wsdl:part name="parameter" element="ns:employee_response"/>
+	</wsdl:message>
+	<wsdl:portType name="EmployeeServicePort">
+		<wsdl:operation name="getEmployee">
+			<wsdl:input message="tns:NewMessageRequest"/>
+			<wsdl:output message="tns:NewMessageResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="EmployeeServiceBinding" type="tns:EmployeeServicePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getEmployee">
+			<soap:operation soapAction="getEmployee"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="EmployeeService">
+		<wsdl:port name="EmployeeServiceSOAPPort" binding="tns:EmployeeServiceBinding">
+			<soap:address location="No Target Adress"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>]]></con:wsdl>
+    <con:dependencies>
+        <con:import location="EmployeeService.xsd" namespace="http://nl.xenta/services/employee">
+            <con:schema ref="ErrorHandling/testService/wsdl/EmployeeService"/>
+        </con:import>
+    </con:dependencies>
+    <con:targetNamespace>http://new.webservice.namespace</con:targetNamespace>
+</con:wsdlEntry>

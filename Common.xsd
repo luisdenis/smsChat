@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+xmlns="http://services.tigo.com.gt/Common/V1"
+targetNamespace="http://services.tigo.com.gt/Common/V1"
+elementFormDefault="qualified">
+<xsd:simpleType name="MessageStateType">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="ERROR"/>
+<xsd:enumeration value="OK"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CommunicationType">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="ASY"/>
+<xsd:enumeration value="SYN"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="ErrorType">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="COM"/>
+<xsd:enumeration value="MSJ"/>
+<xsd:enumeration value="NEG"/>
+<xsd:enumeration value="TEC"/>
+<xsd:enumeration value="SEG"/>
+<xsd:enumeration value="DES"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="CodeType">
+<xsd:restriction base="xsd:string">
+<xsd:maxLength value="12"/>
+</xsd:restriction>
+</xsd:simpleType>
+<xsd:simpleType name="TransportCodeType">
+<xsd:restriction base="xsd:string">
+<xsd:enumeration value="BPEL10G"/>
+<xsd:enumeration value="EJB"/>
+<xsd:enumeration value="EMAIL"/>
+<xsd:enumeration value="ESB"/>
+<xsd:enumeration value="FILE_SYSTEM"/>
+<xsd:enumeration value="FTP"/>
+<xsd:enumeration value="FTPS"/>
+<xsd:enumeration value="HTTP"/>
+<xsd:enumeration value="HTTPS"/>
+<xsd:enumeration value="JCA"/>
+<xsd:enumeration value="JMS"/>
+<xsd:enumeration value="MQ"/>
+<xsd:enumeration value="POJO"/>
+<xsd:enumeration value="SOA_DIRECT"/>
+<xsd:enumeration value="TUXEDO"/>
+<xsd:enumeration value="WS"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.blve.hibernate.pojo.Application" table="`APPLICATION_TBL`">
+        <id name="applicationID" type="java.lang.String">
+            <column name="`ApplicationID`" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="applicationName" type="java.lang.String">
+            <column name="`ApplicationName`" />
+        </property>
+        <property name="applicationHostIP" type="java.lang.String">
+            <column name="`ApplicationHostIP`" />
+        </property>
+        <property name="applicationStatus" type="java.lang.String">
+            <column name="`ApplicationStatus`" />
+        </property>
+        <property name="applicationAdditionalParam1" type="java.lang.String">
+            <column name="`ApplicationAdditionalParam1`" />
+        </property>
+        <property name="applicationAdditionalParam2" type="java.lang.String">
+            <column name="`ApplicationAdditionalParam2`" />
+        </property>
+        <property name="applicationAdditionalParam3" type="java.lang.String">
+            <column name="`ApplicationAdditionalParam3`" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+(:: pragma  parameter="$anyType1" type="anyType" ::)
+(:: pragma  parameter="$anyType2" type="anyType" ::)
+(:: pragma bea:global-element-return element="ns0:eLoggerException" location="../wsdl/Logger.wsdl" ::)
+
+declare namespace ns1 = "http://services.tigo.com.gt/Error/V1";
+declare namespace ns0 = "http://services.tigo.com.gt/Logger/types";
+declare namespace xf = "http://tempuri.org/Logger/transformation/LoggerFault/";
+
+declare function xf:LoggerFault($anyType1 as element(*),
+    $anyType2 as element(*))
+    as element(ns0:eLoggerException) {
+        <ns0:eLoggerException>
+            <ns1:Error>
+                <ns1:code>{ $anyType1/@* , $anyType1/node() }</ns1:code>
+                <ns1:description>{ $anyType2/@* , $anyType2/node() }</ns1:description>
+            </ns1:Error>
+        </ns0:eLoggerException>
+};
+
+declare variable $anyType1 as element(*) external;
+declare variable $anyType2 as element(*) external;
+
+xf:LoggerFault($anyType1,
+    $anyType2)

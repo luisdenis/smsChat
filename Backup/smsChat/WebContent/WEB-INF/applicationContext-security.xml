@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  - Sample namespace-based configuration
+  -
+  - $Id: applicationContext-security.xml 3019 2008-05-01 17:51:48Z luke_t $
+  -->
+
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+    xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    					http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                        http://www.springframework.org/schema/security 
+                        http://www.springframework.org/schema/security/spring-security-2.0.1.xsd">
+
+   <!--
+    Automatically registers a login form, BASIC authentication, anonymous authentication, 
+    logout services, remember-me and servlet-api-integration.
+    -->
+   <http auto-config="true"  >
+   	  
+   	  <!-- No se necesita estar autenticados para acceder a estas vistas -->
+   	  <intercept-url pattern="/login.htm" filters="none" />
+   	  
+   	  <intercept-url pattern="/home.htm" access="ROLE_USER" />
+   	  
+      <intercept-url pattern="/index.htm" requires-channel="http" />
+      
+       <!-- Login -->
+       <form-login login-page="/login.htm" default-target-url="/auth.htm" authentication-failure-url="/login.htm?login_error=1" />
+      
+       <!-- Logout -->
+      <logout logout-url="/signout.htm" logout-success-url="/login.htm" />
+      
+      <concurrent-session-control max-sessions="1"  expired-url="/login.htm?login_error=2"/>
+
+   </http>
+    
+    
+	<beans:bean id="customUserDetailsService" scope="prototype" class="com.blve.smschat.domain.CustomUserDetailsService"/>
+	
+	<beans:bean id="customAuthenticationProvider" class="com.blve.smschat.business.AuthManager">
+	    <custom-authentication-provider />
+	       
+	</beans:bean>
+    
+	<!-- <authentication-provider>
+	    <user-service>
+	        <user name="ldenis" password="ldenis" authorities="supervisor, teller, user" />
+	    </user-service>
+	</authentication-provider> -->
+	
+		
+  
+</beans:beans>

@@ -1,0 +1,26 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma  parameter="$body" type="xs:anyType" ::)
+(:: pragma  parameter="$inbound" type="xs:anyType" ::)
+(:: pragma  parameter="$fault" type="xs:anyType" ::)
+(:: pragma  type="xs:anyType" ::)
+
+declare namespace xf = "http://tempuri.org/Logger/transformation/LoggerError/";
+declare namespace ctx = "http://www.bea.com/wli/sb/context";
+declare namespace tp = "http://www.bea.com/wli/sb/transports";
+declare namespace http = "http://www.bea.com/wli/sb/http";
+declare namespace soapenv = "http://schemas.xmlsoap.org/soap/envel
+xf:)ope/";
+declare namespace err = "http://services.tigo.com.gt/Error/V1";
+
+declare function xf:LoggerError($body as element(*),
+    $inbound as element(*),
+    $fault as element(*))
+ as element(*) {
+
+declare variable $body as element(*) external;
+declare variable $inbound as element(*) external;
+declare variable $fault as element(*) external;
+
+xf:LoggerError($body,
+    $inbound,
+    $fault)

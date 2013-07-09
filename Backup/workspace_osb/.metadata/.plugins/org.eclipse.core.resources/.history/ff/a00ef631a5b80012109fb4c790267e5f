@@ -1,0 +1,42 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma  parameter="$anyType1" type="xs:anyType" ::)
+(:: pragma  type="xs:anyType" ::)
+
+declare namespace xf = "http://tempuri.org/Logger/transformation/ErrorRepository/";
+
+declare function xf:ErrorRepository()
+    as element(*) {
+			<service_error_handling xmlns="http://tempuri.org/Logger/transformation/ErrorRepository/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<error>
+				<code>LOG-201</code>
+				<reason>Invalid applicationID</reason>
+				<description></description>
+				<errorType>TEC</errorType>
+				<sourceSystem>DBAdapter</sourceSystem>
+				<faultTransformer>Logger/transformation/LoggerError</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>N</indLogging>
+				<indReporting>N</indReporting>
+			</error>
+			<error>
+				<code>LOG-202</code>
+				<reason>Unsaved Record</reason>
+				<description></description>
+				<errorType>TEC</errorType>
+				<sourceSystem>DBAdapter</sourceSystem>
+				<faultTransformer>Logger/transformation/LoggerError</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>N</indLogging>
+				<indReporting>N</indReporting>
+			</error>
+			
+			
+			
+		</service_error_handling>	
+};
+
+xf:ErrorRepository()

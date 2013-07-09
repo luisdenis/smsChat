@@ -1,0 +1,3 @@
+#Wed May 08 16:56:50 VET 2013
+eclipse.preferences.version=1
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1368024035754" defaultVMConnector\="">\n<vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\n<vm id\="1368024035754" name\="jdk1.6.0_37" path\="/home/eyanez/programas/jdk1.6.0_37"/>\n<vm id\="Oracle WebLogic Server 11gR1 (10.3.6) JRE" name\="Oracle WebLogic Server 11gR1 (10.3.6) JRE" path\="/home/eyanez/programas/jdk1.6.0_37"/>\n</vmType>\n</vmSettings>\n

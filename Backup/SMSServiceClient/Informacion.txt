@@ -1,0 +1,15 @@
+Numero de pruebas
+	48252869
+	53098097
+	53759792
+	
+Accreditation
+
+Método que Realiza el Cobro a B:
+
+Observaciones:
+	Numero de Prueba: 
+	Resultado con Exito= <vas:response>0</vas:response>
+	AccreditationCode = <sms:accreditationcode>982</sms:accreditationcode>
+	No tiene Saldo el Usuario = <vas:response>2</vas:response>
+	Otro Error del Sistema: Response <> 2 or Response <> 0

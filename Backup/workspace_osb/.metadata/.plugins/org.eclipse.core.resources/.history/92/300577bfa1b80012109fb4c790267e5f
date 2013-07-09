@@ -1,0 +1,30 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma  parameter="$anyType1" type="xs:anyType" ::)
+(:: pragma  type="xs:anyType" ::)
+
+declare namespace xf = "http://tempuri.org/Logger/transformation/ErrorRepository/";
+
+declare function xf:ErrorRepository()
+    as element(*) {
+			<service_error_handling xmlns="http://nl.xenta/services/errorRepository" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<error>
+				<code>201</code>
+				<reason></reason>
+				<description>Validation of the XML payload failed</description>
+				<errorType></errorType>
+				<sourceSystem>DBAdapter</sourceSystem>
+				<faultTransformer>ErrorHandling/errorRepository/GenericFault_To_SOAPFault</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>N</indLogging>
+				<indReporting>N</indReporting>
+				
+                <xsd:element name="code" type="xsd:string"/>
+                
+                <xsd:element name="description" type="xsd:string"/>
+			</error>
+		</service_error_handling>	
+};
+
+xf:ErrorRepository()

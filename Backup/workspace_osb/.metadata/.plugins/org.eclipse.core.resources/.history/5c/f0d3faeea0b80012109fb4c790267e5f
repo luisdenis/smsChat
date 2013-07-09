@@ -1,0 +1,14 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma  parameter="$anyType1" type="xs:anyType" ::)
+(:: pragma  type="xs:anyType" ::)
+
+declare namespace xf = "http://tempuri.org/Logger/transformation/ErrorRepository/";
+
+declare function xf:ErrorRepository()
+    as element(*) {
+
+};
+
+declare variable $anyType1 as element(*) external;
+
+xf:ErrorRepository($anyType1)

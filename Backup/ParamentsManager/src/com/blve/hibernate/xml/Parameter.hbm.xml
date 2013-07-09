@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.blve.hibernate.pojo.Parameter" table="`PARAMETER_TBL`">
+        <id name="parameterID" type="int">
+            <column name="`ParameterID`" />
+            <generator class="sequence">
+                <param name="sequence">PARAMETER_SEQ</param>
+            </generator>
+        </id>
+        
+       	<many-to-one name="application" column="`ApplicationID`" not-null="true" lazy="false"/>
+       	
+       	<many-to-one name="parameterType" column="`ParameterTypeID`" not-null="true" lazy="false"/>
+       	
+        <property name="parameterName" type="java.lang.String">
+            <column name="`ParameterName`" />
+        </property>
+        <property name="parameterDescription" type="java.lang.String">
+            <column name="`ParameterDescription`" />
+        </property>
+        <property name="parameterStatus" type="java.lang.String">
+            <column name="`ParameterStatus`" />
+        </property>
+        <property name="parameterValue" type="java.lang.String">
+            <column name="`ParameterValue`" />
+        </property>
+
+
+    </class>
+</hibernate-mapping>

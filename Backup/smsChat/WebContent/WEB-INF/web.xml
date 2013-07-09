@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="smsChat"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>smsChat</display-name> 
+ 	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+   <error-page>
+    	<error-code>500</error-code>
+    	<location>/error.jsp</location>
+    </error-page>
+    <error-page>
+    	<error-code>404</error-code>
+    	<location>/error.jsp</location>
+    </error-page>
+    <error-page>
+    	<error-code>403</error-code>
+    	<location>/errorAccessDenied.htm</location>
+    </error-page>
+ 	 
+    <servlet>
+		<servlet-name>dispatch</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>dispatch</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml,/WEB-INF/applicationContext-security.xml,/WEB-INF/persistenceContext.xml</param-value>
+	</context-param>
+ 
+	
+	<context-param>
+         <param-name>webAppRootKey</param-name>
+         <param-value>smsChat</param-value>
+</context-param>
+  <context-param>
+         <param-name>log4jConfigLocation</param-name>
+         <param-value>/WEB-INF/classes/log4j.properties</param-value>
+  </context-param>
+  <context-param>
+         <param-name>log4jRefreshInterval</param-name>
+         <param-value>1000</param-value>
+  </context-param> 
+
+  <!-- Config para sexurity -->
+   <filter>
+  	<filter-name>SpringSecurityFilterChainProxy</filter-name>
+  	<filter-class>org.springframework.security.util.FilterToBeanProxy</filter-class>
+  	<init-param>
+  		<param-name>targetClass</param-name>
+  		<param-value>
+  			org.springframework.security.util.FilterChainProxy
+  		</param-value>
+  	</init-param>
+  </filter>
+
+
+  <filter-mapping>
+  	<filter-name>SpringSecurityFilterChainProxy</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+
+  <session-config>
+  	<session-timeout>15</session-timeout>
+  </session-config>
+
+<!-- Listener para asegurar que cada usuario habre solo una sesion en la aplicacion -->
+	<listener>
+		<listener-class>org.springframework.security.ui.session.HttpSessionEventPublisher</listener-class>
+	</listener>
+<!-- Fin config security -->
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener> 
+  <listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+
+</web-app>

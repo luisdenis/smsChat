@@ -1,0 +1,44 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma  parameter="$anyType1" type="xs:anyType" ::)
+(:: pragma  type="xs:anyType" ::)
+
+declare namespace xf = "http://services.tigo.com.gt/Logger/ErrorRepository/";
+
+declare function xf:ErrorRepository()
+    as element(*) {
+			<service_error_handling xmlns="http://services.tigo.com.gt/Logger/ErrorRepository/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<error>
+				<code>201</code>
+				<externalCode>201</externalCode>
+				<reason>Invalid applicationID</reason>
+				<description></description>
+				<errorType>TEC</errorType>
+				<sourceSystem>DBAdapter</sourceSystem>
+				<faultTransformer>Logger/transformation/faults/GenericFault_To_SOAPFault</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>N</indLogging>
+				<indReporting>N</indReporting>
+			</error>
+			<error>
+				<code>202</code>
+				<externalCode>202</externalCode>
+				<reason>Unsaved Record</reason>
+				<description></description>
+				<errorType>TEC</errorType>
+				<sourceSystem>DBAdapter</sourceSystem>
+				<faultTransformer>Logger/transformation/faults/GenericFault_To_SOAPFault</faultTransformer>
+				<indAlert>Y</indAlert>
+				<indAlertOverwriteDestionation>N</indAlertOverwriteDestionation>
+				<alertDestination/>
+				<indLogging>N</indLogging>
+				<indReporting>N</indReporting>
+			</error>
+			
+			
+			
+		</service_error_handling>	
+};
+
+xf:ErrorRepository()

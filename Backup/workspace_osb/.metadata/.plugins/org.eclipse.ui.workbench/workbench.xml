@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="91" version="2.0">
+<workbenchAdvisor/>
+<window height="752" maximized="true" width="1020" x="0" y="24">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout>
+<coolItem id="group.file" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="124" y="34"/>
+<coolItem id="additions" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="116" y="34"/>
+<coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="100" y="34"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="68" y="34"/>
+<coolItem id="org.eclipse.wst.server.ui.new.actionSet" itemType="typeToolBarContribution" x="44" y="34"/>
+<coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.design.DesignToolBar" itemType="typeToolBarContribution" x="68" y="34"/>
+<coolItem id="group.nav" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="172" y="34"/>
+<coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.wsdl.ui.internal.WSDLEditor" itemType="typePlaceholder" x="233" y="34"/>
+<coolItem id="org.eclipse.wst.xsd.ui.internal.editor.InternalXSDMultiPageEditor" itemType="typePlaceholder" x="233" y="34"/>
+<coolItem id="com.bea.alsb.common.mapper.editors.MapperEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.bea.alsb.ui.editors.proxy" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="com.bea.alsb.ui.editors.biz" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="group.help" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
+</coolbarLayout>
+<page aggregateWorkingSetId="Aggregate for window 1368023822828" focus="true" label="Workspace - Oracle Service Bus">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="com.bea.alsb.ui.editors.proxy" name="LoggerPS.proxy" partName="LoggerPS.proxy" path="/home/eyanez/workspace_osb/Logger/proxy-service/LoggerPS.proxy" title="LoggerPS.proxy" tooltip="Logger/proxy-service/LoggerPS.proxy" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Logger/proxy-service/LoggerPS.proxy"/>
+</editor>
+<editor id="com.bea.alsb.ui.editors.proxy" name="ErrorHandler.proxy" partName="ErrorHandler.proxy" path="/home/eyanez/Descargas/OSB/ErrorHandling/errorRepository/proxy/ErrorHandler.proxy" title="ErrorHandler.proxy" tooltip="ErrorHandling/errorRepository/proxy/ErrorHandler.proxy" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ErrorHandling/errorRepository/proxy/ErrorHandler.proxy"/>
+</editor>
+<editor activePart="true" focus="true" id="com.bea.alsb.common.mapper.editors.MapperEditor" name="GenericFault_To_SOAPFault2.xq" partName="GenericFault_To_SOAPFault2.xq" path="/home/eyanez/Descargas/OSB/ErrorHandling/errorRepository/xquery/faults/GenericFault_To_SOAPFault2.xq" title="GenericFault_To_SOAPFault2.xq" tooltip="ErrorHandling/errorRepository/xquery/faults/GenericFault_To_SOAPFault2.xq" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ErrorHandling/errorRepository/xquery/faults/GenericFault_To_SOAPFault2.xq"/>
+</editor>
+</editors>
+<views>
+<view id="com.bea.alsb.common.mapper.views.DataPalette" partName="Expression Variables">
+<viewState/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+</viewState>
+</view>
+<view id="com.bea.alsb.common.xquery.ui.views.FunctionsPalette" partName="Expression Functions">
+<viewState/>
+</view>
+<view id="com.bea.alsb.common.mapper.views.ConstraintsView" partName="Constraints"/>
+<view id="org.eclipse.ui.views.ContentOutline" partName="Outline">
+<viewState/>
+</view>
+<view id="com.bea.alsb.ui.views.ReferenceView" partName="References">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
+<viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="com.bea.workshop.common.ui.CorePaletteView" partName="Design Palette">
+<viewState/>
+</view>
+<view id="com.bea.alsb.common.mapper.views.TargetExpression" partName="Target Expression">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.PropertySheet" partName="Properties">
+<viewState/>
+</view>
+<view id="org.eclipse.ui.views.ResourceNavigator" partName="Navigator">
+<viewState LINK_NAVIGATOR_TO_EDITOR="0" sorter="1">
+<filters>
+<filter element="*.class" isEnabled="true"/>
+<filter element=".*" isEnabled="false"/>
+<filter element="*.pyc" isEnabled="true"/>
+<filter element="*.class" isEnabled="true"/>
+<filter element="*.pyo" isEnabled="true"/>
+</filters>
+<expanded>
+<element path="/Logger"/>
+<element path="/Logger/proxy-service"/>
+<element path="/Logger/transformation"/>
+</expanded>
+<selection>
+<element path="/Logger/proxy-service/LoggerPS.proxy"/>
+</selection>
+</viewState>
+</view>
+<view id="org.eclipse.ui.views.ProblemView" partName="Problems">
+<viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
+</expanded>
+<columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="233" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="350"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.pathField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.locationField"/>
+<visible IMemento.internal.id="org.eclipse.ui.ide.markerType"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks" partName="Task List"/>
+<view id="org.eclipse.wst.server.ui.ServersView" partName="Servers">
+<viewState CommonNavigator.LINKING_ENABLED="0"/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.bea.alsb.ui.perspectives.aqualogic">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
+<alwaysOnActionSet id="org.eclipse.help.internal.ui.HelpActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.search.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<show_view_action id="org.eclipse.ui.views.BookmarkView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.views.ProgressView"/>
+<show_view_action id="org.eclipse.ui.views.TaskList"/>
+<show_view_action id="org.eclipse.ant.ui.views.AntView"/>
+<show_view_action id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="oracle.eclipse.tools.webservices.ui.wizards.WebServiceProjectWizard"/>
+<new_wizard_action id="oracle.eclipse.tools.webtier.adf.ui.wizard.internal.newadfapplication.NewADFApplicationWizard"/>
+<new_wizard_action id="org.eclipse.mylyn.tasks.ui.wizards.new.repository.task"/>
+<new_wizard_action id="org.eclipse.ui.editors.wizards.UntitledTextFileWizard"/>
+<new_wizard_action id="org.springframework.ide.eclipse.beans.ui.wizards.newBeansConfig"/>
+<new_wizard_action id="org.springframework.ide.eclipse.beans.ui.wizards.newSpringProject"/>
+<perspective_action id="com.bea.alsb.common.mapper.perspectives.MapperPerspective"/>
+<perspective_action id="com.bea.alsb.ui.perspectives.aqualogic"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaBrowsingPerspective"/>
+<perspective_action id="org.eclipse.jst.j2ee.J2EEPerspective"/>
+<perspective_action id="org.eclipse.team.cvs.ui.cvsPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<perspective_action id="org.eclipse.wst.jsdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.wst.xml.ui.perspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+<view id="com.bea.workshop.common.ui.CorePaletteView"/>
+<view id="org.eclipse.wst.server.ui.ServersView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<fastViewBars/>
+<layout>&#x0A;<mainWindow>&#x0A;<info folder="true" part="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<page content="org.eclipse.ui.views.BookmarkView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
+<page content="org.eclipse.team.ccvs.ui.RepositoriesView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@6d1683" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="topLeft">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.gef.ui.palette_view" ratio="0.25940594" ratioLeft="262" ratioRight="748" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomRight" ratio="0.6584565" ratioLeft="401" ratioRight="208" relationship="4" relative="org.eclipse.gef.ui.palette_view">&#x0A;<folder appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.TaskList" label="LabelNotFound"/>
+<page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.1590909" ratioLeft="119" ratioRight="629" relationship="2" relative="org.eclipse.gef.ui.palette_view"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@2897ac" ratio="0.7495049" ratioLeft="757" ratioRight="253" relationship="2" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="com.bea.workshop.common.ui.CorePaletteView" appearance="2" expanded="2">&#x0A;<page content="com.bea.workshop.common.ui.CorePaletteView" label="Design Palette"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@191535f" ratio="0.5361842" ratioLeft="326" ratioRight="282" relationship="4" relative="org.eclipse.ui.editorss">&#x0A;<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="1"/>
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.49917898" ratioLeft="304" ratioRight="305" relationship="4" relative="topLeft">&#x0A;<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">&#x0A;<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<page content="org.eclipse.mylyn.tasks.ui.views.tasks" label="Task List"/>
+<page content="org.eclipse.ant.ui.views.AntView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">&#x0A;<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.bea.alsb.ui.perspectives.AquaLogicPerspectiveFactory" id="com.bea.alsb.ui.perspectives.aqualogic" label="Oracle Service Bus"/>
+<alwaysOnActionSet id="org.eclipse.help.internal.ui.HelpActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.search.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.wst.server.ui.new.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.NavigateActionSet"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.launchActionSet"/>
+<show_view_action id="com.bea.alsb.ui.views.ReferenceView"/>
+<show_view_action id="org.eclipse.wst.server.ui.ServersView"/>
+<show_view_action id="com.bea.workshop.common.ui.CorePaletteView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.newproject"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.newcontainer"/>
+<new_wizard_action id="com.bea.alsb.common.formatbuilder.wizards.MFLNewWizard"/>
+<new_wizard_action id="org.eclipse.wst.wsdl.ui"/>
+<new_wizard_action id="org.eclipse.wst.xsd.ui.internal.wizards.NewXSDWizard"/>
+<new_wizard_action id="com.bea.alsb.common.mapper.wizards.MapperNewWizard"/>
+<new_wizard_action id="org.eclipse.wst.server.ui.new.server"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.file"/>
+<new_wizard_action id="com.bea.alsb.process.flow.ui.wizards.NewFlowWizard"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.alert"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.cr"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.jndi"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.ps"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.sa"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.proxy"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.biz"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.skp"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.smtp"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.uddi"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.policy"/>
+<new_wizard_action id="com.bea.alsb.ui.wizards.xslt"/>
+<perspective_action id="org.eclipse.debug.ui.DebugPerspective"/>
+<perspective_action id="org.eclipse.jdt.ui.JavaPerspective"/>
+<perspective_action id="org.eclipse.team.ui.TeamSynchronizingPerspective"/>
+<perspective_action id="com.bea.wlw.common.ui.perspectives.workshop"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.navigator.ProjectExplorer"/>
+<view id="org.eclipse.ui.views.ContentOutline"/>
+<view id="com.bea.workshop.common.ui.CorePaletteView"/>
+<view id="com.bea.alsb.ui.views.ReferenceView"/>
+<view id="org.eclipse.wst.server.ui.ServersView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.navigator.ProjectExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.ui.navigator.ProjectExplorer" label="Project Explorer"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.25943395" ratioLeft="330" ratioRight="942" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottom" ratio="0.63486844" ratioLeft="386" ratioRight="222" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
+<page content="com.bea.alsb.ui.views.ReferenceView" label="References"/>
+<page content="org.eclipse.wst.server.ui.ServersView" label="Servers"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="topRight" ratio="0.7993631" ratioLeft="753" ratioRight="189" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="com.bea.workshop.common.ui.CorePaletteView" appearance="2" expanded="2">
+<page content="com.bea.workshop.common.ui.CorePaletteView" label="Design Palette"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1271cd" ratio="0.3618421" ratioLeft="220" ratioRight="388" relationship="4" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.6430921" ratioLeft="391" ratioRight="217" relationship="4" relative="topLeft">
+<folder activePageID="org.eclipse.ui.views.ContentOutline" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ContentOutline" label="Outline"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.bea.wli.ide.mapper.perspectives.MapperPerspective" id="com.bea.alsb.common.mapper.perspectives.MapperPerspective" label="XQuery Transformation"/>
+<alwaysOnActionSet id="org.eclipse.help.internal.ui.HelpActionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.doc.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.mylyn.tasks.ui.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.externaltools.ExternalToolsSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.ui.actionSet"/>
+<alwaysOnActionSet id="org.springframework.ide.eclipse.beans.search.actionSet"/>
+<alwaysOnActionSet id="com.bea.alsb.common.formatbuilder.actionSet"/>
+<show_view_action id="org.eclipse.ui.views.ResourceNavigator"/>
+<show_view_action id="org.eclipse.ui.views.ProblemView"/>
+<show_view_action id="com.bea.alsb.common.xquery.ui.views.FunctionsPalette"/>
+<show_view_action id="com.bea.alsb.common.mapper.views.DataPalette"/>
+<show_view_action id="com.bea.alsb.common.mapper.views.TargetExpression"/>
+<show_view_action id="com.bea.alsb.common.mapper.views.ConstraintsView"/>
+<show_view_action id="org.eclipse.ui.views.PropertySheet"/>
+<new_wizard_action id="org.eclipse.ui.wizards.new.folder"/>
+<new_wizard_action id="com.bea.alsb.common.mapper.wizards.MapperNewWizard"/>
+<new_wizard_action id="com.bea.alsb.common.formatbuilder.wizards.MFLNewWizard"/>
+<perspective_action id="org.eclipse.ui.resourcePerspective"/>
+<hide_toolbar_item_id id="org.eclipse.jdt.ui.actions.OpenProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.eclipse.ui.views.ResourceNavigator"/>
+<view id="com.bea.alsb.common.mapper.views.DataPalette"/>
+<view id="com.bea.alsb.common.xquery.ui.views.FunctionsPalette"/>
+<view id="com.bea.alsb.common.mapper.views.TargetExpression"/>
+<view id="com.bea.alsb.common.mapper.views.ConstraintsView"/>
+<view id="org.eclipse.ui.views.ProblemView"/>
+<view id="org.eclipse.ui.views.PropertySheet"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="topLeft">
+<folder activePageID="org.eclipse.ui.views.ResourceNavigator" appearance="2" expanded="2">
+<page content="org.eclipse.ui.views.ResourceNavigator" label="Navigator"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.75" ratioLeft="954" ratioRight="318" relationship="2" relative="topLeft">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.19968553" ratioLeft="254" ratioRight="1018" relationship="2" relative="topLeft"/>
+<info folder="true" part="bottomFrame" ratio="0.60883796" ratioLeft="372" ratioRight="239" relationship="4" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.eclipse.ui.views.PropertySheet" appearance="2" expanded="2">
+<page content="com.bea.alsb.common.mapper.views.TargetExpression" label="Target Expression"/>
+<page content="com.bea.alsb.common.mapper.views.ConstraintsView" label="Constraints"/>
+<page content="org.eclipse.ui.views.ProblemView" label="Problems"/>
+<page content="org.eclipse.ui.views.PropertySheet" label="Properties"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="bottomLeft" ratio="0.6019737" ratioLeft="366" ratioRight="242" relationship="4" relative="topLeft">
+<folder activePageID="com.bea.alsb.common.xquery.ui.views.FunctionsPalette" appearance="2" expanded="2">
+<page content="com.bea.alsb.common.mapper.views.DataPalette" label="Expression Variables"/>
+<page content="com.bea.alsb.common.xquery.ui.views.FunctionsPalette" label="Expression Functions"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="1"/>
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" path="/Logger/transformation/LoggerResponse.xq"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.ui.editors.proxy" path="/Logger/proxy-service/LoggerPS.proxy"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.ui.editors.proxy" path="/JukeboxService/JukeboxServicePS.proxy"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" path="/JukeboxService/CDCollection_private2public.xq"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/JukeboxService/JukeboxServicePS.proxy"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Logger/transformation/LoggerResponse.xq"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/Logger/adapter/LoggerDBAdapter/xsd/DBAdapter_sp.xsd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" path="/Logger/adapter/LoggerDBAdapter/DBAdapter_db.jca"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.wsdl.ui.internal.WSDLEditor" path="/Logger/adapter/LoggerDBAdapter/DBAdapter.wsdl"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" path="/Logger/adapter/LoggerDBAdapter/xsd/DBAdapter_sp.xsd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.wsdl.ui.internal.WSDLEditor" path="/Logger/adapter/LoggerDBAdapter/DBAdapter.wsdl"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" path="/Logger/transformation/LoggerFault.xq"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" path="/ErrorHandling/errorRepository/xsd/ErrorRepository.xq"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xsd.ui.internal.editor.InternalXSDMultiPageEditor" path="/ErrorHandling/errorRepository/xsd/ErrorRepository.xsd"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.ui.editors.proxy" path="/ErrorHandling/errorRepository/proxy/ErrorHandler.proxy"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" path="/ErrorHandling/errorRepository/xquery/faults/GenericFault_To_SOAPFault2.xq"/>
+</editors>
+<item historyLabel="JukeboxServicePS.proxy" index="4">
+<position/>
+</item>
+<item historyLabel="JukeboxServicePS.proxy" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="JukeboxServicePS.proxy" index="2"/>
+<item historyLabel="LoggerResponse.xq" index="0"/>
+<item historyLabel="CDCollection_private2public.xq" index="3"/>
+<item historyLabel="LoggerResponse.xq" index="0"/>
+<item historyLabel="CDCollection_private2public.xq" index="3"/>
+<item historyLabel="LoggerResponse.xq" index="0"/>
+<item historyLabel="JukeboxServicePS.proxy" index="2"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="JukeboxServicePS.proxy" index="2"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="LoggerResponse.xq" index="0"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="LoggerResponse.xq" index="0"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="LoggerResponse.xq" index="0"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="LoggerResponse.xq" index="0"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="LoggerResponse.xq" index="5">
+<position info="not_deleted" x="347" y="0"/>
+</item>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="DBAdapter_sp.xsd" index="6">
+<position/>
+</item>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="DBAdapter_db.jca" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="DBAdapter.wsdl" index="8"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="DBAdapter_sp.xsd" index="6">
+<position info="not_deleted" x="132" y="54"/>
+</item>
+<item historyLabel="DBAdapter.wsdl" index="8"/>
+<item historyLabel="DBAdapter_sp.xsd" index="6">
+<position info="not_deleted" x="907" y="0"/>
+</item>
+<item historyLabel="DBAdapter.wsdl" index="8"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="DBAdapter_sp.xsd" index="9">
+<position info="not_deleted" x="132" y="54"/>
+</item>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="DBAdapter.wsdl" index="8"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="DBAdapter.wsdl" index="10"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="LoggerFault.xq" index="11"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="LoggerFault.xq" index="11"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="ErrorRepository.xq" index="12"/>
+<item historyLabel="ErrorRepository.xsd" index="13">
+<position path=""/>
+</item>
+<item historyLabel="ErrorRepository.xq" index="12"/>
+<item historyLabel="LoggerPS.proxy" index="1"/>
+<item historyLabel="ErrorHandler.proxy" index="14"/>
+<item active="true" historyLabel="GenericFault_To_SOAPFault2.xq" index="15"/>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="131072">
+<trimItem IMemento.internal.id="bottom"/>
+</trimArea>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+<trimItem IMemento.internal.id="org.eclipse.mylyn.tasks.ui.trim.container"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" name="GenericFault_To_SOAPFault2.xq" tooltip="ErrorHandling/errorRepository/xquery/faults/GenericFault_To_SOAPFault2.xq">
+<persistable path="/ErrorHandling/errorRepository/xquery/faults/GenericFault_To_SOAPFault2.xq"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.ui.editors.proxy" name="ErrorHandler.proxy" tooltip="ErrorHandling/errorRepository/proxy/ErrorHandler.proxy">
+<persistable path="/ErrorHandling/errorRepository/proxy/ErrorHandler.proxy"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xsd.ui.internal.editor.InternalXSDMultiPageEditor" name="ErrorRepository.xsd" tooltip="ErrorHandling/errorRepository/xsd/ErrorRepository.xsd">
+<persistable path="/ErrorHandling/errorRepository/xsd/ErrorRepository.xsd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" name="ErrorRepository.xq" tooltip="ErrorHandling/errorRepository/xsd/ErrorRepository.xq">
+<persistable path="/ErrorHandling/errorRepository/xsd/ErrorRepository.xq"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.ui.editors.proxy" name="LoggerPS.proxy" tooltip="Logger/proxy-service/LoggerPS.proxy">
+<persistable path="/Logger/proxy-service/LoggerPS.proxy"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" name="LoggerFault.xq" tooltip="Logger/transformation/LoggerFault.xq">
+<persistable path="/Logger/transformation/LoggerFault.xq"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="DBAdapter_sp.xsd" tooltip="Logger/adapter/LoggerDBAdapter/xsd/DBAdapter_sp.xsd">
+<persistable path="/Logger/adapter/LoggerDBAdapter/xsd/DBAdapter_sp.xsd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.wsdl.ui.internal.WSDLEditor" name="DBAdapter.wsdl" tooltip="Logger/adapter/LoggerDBAdapter/DBAdapter.wsdl">
+<persistable path="/Logger/adapter/LoggerDBAdapter/DBAdapter.wsdl"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="DBAdapter_db.jca" tooltip="Logger/adapter/LoggerDBAdapter/DBAdapter_db.jca">
+<persistable path="/Logger/adapter/LoggerDBAdapter/DBAdapter_db.jca"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.DefaultTextEditor" name="LoggerResponse.xq" tooltip="Logger/transformation/LoggerResponse.xq">
+<persistable path="/Logger/transformation/LoggerResponse.xq"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.ui.editors.proxy" name="JukeboxServicePS.proxy" tooltip="JukeboxService/JukeboxServicePS.proxy">
+<persistable path="/JukeboxService/JukeboxServicePS.proxy"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.bea.alsb.common.mapper.editors.MapperEditor" name="CDCollection_private2public.xq" tooltip="JukeboxService/CDCollection_private2public.xq">
+<persistable path="/JukeboxService/CDCollection_private2public.xq"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.wsdl.ui.internal.WSDLEditor" name="MusicApiSearchForCDs_db.wsdl" tooltip="JukeboxService/MusicAPIDBAdapter/MusicApiSearchForCDs_db.wsdl">
+<persistable path="/JukeboxService/MusicAPIDBAdapter/MusicApiSearchForCDs_db.wsdl"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="MUSIC_MUSIC_API_SEARCH_FOR_CDS.xsd" tooltip="JukeboxService/MusicAPIDBAdapter/xsd/MUSIC_MUSIC_API_SEARCH_FOR_CDS.xsd">
+<persistable path="/JukeboxService/MusicAPIDBAdapter/xsd/MUSIC_MUSIC_API_SEARCH_FOR_CDS.xsd"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.wsdl.ui.internal.WSDLEditor" name="JukeboxService.wsdl" tooltip="JukeboxService/JukeboxService.wsdl">
+<persistable path="/JukeboxService/JukeboxService.wsdl"/>
+</file>
+</mruList>
+</workbench>

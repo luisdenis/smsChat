@@ -1,0 +1,116 @@
+<ui:composition template="/templates/layout.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui">
+     <ui:define name="content">
+     	
+		<h:form id="form" onLoad="reset()">
+			<p:growl id="msgs" showDetail="true" sticky="false" /> 
+		    <p:dataTable var="paramType" value="#{ParameterTypeControllerBean.lazyModel}" paginator="true" rows="10"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				rowsPerPageTemplate="5,10,15" selection="#{ParameterTypeControllerBean.selectedParameterTypes}" id="dataTable" lazy="true">
+				  
+				
+				<f:facet name="header">
+                    Parameters Types List
+                </f:facet>  
+	
+				<p:column selectionMode="multiple" style="width:2%" />  
+		        <p:column headerText="ID" >
+
+		              <p:commandLink value="#{paramType.parameterTypeID}" update=":parameterTypeDetailForm:display" oncomplete="parameterTypeDialog.show()"  title="View">
+                        <f:setPropertyActionListener value="#{paramType}" target="#{ParameterTypeControllerBean.selectedParameterType}" />    
+                     </p:commandLink>
+                    
+		        </p:column>
+		
+		        <p:column headerText="Name" >
+		            <h:outputText value="#{paramType.parameterType}" />
+		        </p:column>
+		        
+				<f:facet name="footer">
+					<p:commandButton value="New Parameter Type" oncomplete="newParameterTypeDialog.show()" icon="ui-icon-star" title="Creates new Parameter Type"/>
+					<p:commandButton value="Delete Parameters Types" actionListener="#{ParameterTypeControllerBean.doDelete}" update=":form:dataTable,:form:msgs" icon="ui-icon-trash"/>
+				</f:facet>
+		   </p:dataTable>
+		   
+
+		</h:form>
+		
+		<p:dialog header="Parameter Type Detail" widgetVar="parameterTypeDialog" resizable="false" id="parameterTypeDlg" > 
+			 <h:form id="parameterTypeDetailForm">
+				<p:panelGrid id="display" columns="2" cellpadding="4" style="margin:0 auto;">   
+					<h:outputText value="ID :"></h:outputText>
+					<h:outputText value="#{ParameterTypeControllerBean.selectedParameterType.parameterTypeID}" />
+	
+					<h:outputText value="Name :"></h:outputText>
+					<h:inputText value="#{ParameterTypeControllerBean.selectedParameterType.parameterType}" required="true" requiredMessage="Please Enter Name!" maxlength="25">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</h:inputText>
+	
+					<h:outputText value="Description :"></h:outputText>
+					<h:inputTextarea value="#{ParameterTypeControllerBean.selectedParameterType.parameterTypeDescription}" required="true" requiredMessage="Please Enter Description!" rows="5" cols="50" >
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+						<f:validateLength maximum="250" minimum="1"></f:validateLength>
+					</h:inputTextarea>
+	
+					<f:facet name="footer">
+						<p:commandButton value="Update" update=":form:dataTable, :growl"  oncomplete="handleSubmitRequest(xhr, status, args, 'parameterTypeDlg','newParameterTypeForm'); " actionListener="#{ParameterTypeControllerBean.doUpdate}"/>
+					</f:facet>
+				</p:panelGrid> 
+			</h:form>
+		</p:dialog> 
+	                         
+	             
+		<p:dialog header="Create New Parameter Type" onLoad="reset()" widgetVar="newParameterTypeDialog" resizable="false" id="newParameterTypeDlg" > 
+			<h:form id="newParameterTypeForm">
+				<p:panelGrid id="displayNewParameterType" columns="2" cellpadding="4" style="margin:0 auto;">   
+					<h:outputText value="ID :"></h:outputText>
+					<h:outputText value="#{ParameterTypeControllerBean.newParameterType.parameterTypeID}" />
+	
+					<h:outputText value="Name :"></h:outputText>
+					<h:inputText value="#{ParameterTypeControllerBean.newParameterType.parameterType}" required="true" requiredMessage="Please Enter Name!" maxlength="25">
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+					</h:inputText>
+	
+					<h:outputText value="Description :"></h:outputText>
+					<h:inputTextarea value="#{ParameterTypeControllerBean.newParameterType.parameterTypeDescription}" required="true" requiredMessage="Please Enter Description!" rows="5" cols="50" >
+						<f:converter converterId="StringTrimmerConverter"></f:converter>
+						<f:validateLength maximum="250" minimum="1"></f:validateLength>
+					</h:inputTextarea>
+
+					<f:facet name="footer">
+						<p:commandButton value="Submit" update=":form:dataTable, :growl"  oncomplete=" handleSubmitRequest(xhr, status, args, 'newParameterTypeDlg','newParameterTypeForm');" actionListener="#{ParameterTypeControllerBean.doCreate}"/>
+	                    <p:commandButton type="reset" value="Reset"></p:commandButton>                            
+	                </f:facet>
+				</p:panelGrid>  
+			</h:form>
+		</p:dialog> 
+	      
+		<p:growl id="growl" showDetail="true" life="5000" />
+	         
+		<script type="text/javascript">  
+	    	function handleSubmitRequest(xhr, status, args, dialogName, formName) 
+	    	{  
+	            dialog = jQuery('#'+dialogName);
+	        	if(args.validationFailed) 
+	            {  
+	            	dialog.effect("shake", { times:3 }, 100);  
+	        	} 
+	        	else 
+	            {
+		            clearForm(formName);
+		            newParameterTypeDialog.hide(); 
+		            parameterTypeDialog.hide(); 
+	        	}  
+	    	}
+	    	function clearForm(formName)
+	    	{
+	        	jQuery('#'+formName).each(function() {	this.reset();});
+	    	}
+		</script> 
+		
+	</ui:define>
+</ui:composition>

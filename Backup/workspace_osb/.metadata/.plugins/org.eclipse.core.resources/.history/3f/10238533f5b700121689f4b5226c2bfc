@@ -1,0 +1,17 @@
+(:: pragma bea:global-element-parameter parameter="$eLoggerResponse1" element="ns0:eLoggerResponse" location="../wsdl/Logger.wsdl" ::)
+(:: pragma bea:global-element-return element="ns1:OutputParameters" location="../adapter/LoggerDBAdapter/xsd/DBAdapter_sp.xsd" ::)
+
+declare namespace ns1 = "http://xmlns.oracle.com/pcbpel/adapter/db/sp/DBAdapter";
+declare namespace ns0 = "http://services.tigo.com.gt/Logger/types";
+declare namespace xf = "http://tempuri.org/Logger/transformation/LoggerResponse/";
+
+declare function xf:LoggerResponse($eLoggerResponse1 as element(ns0:eLoggerResponse))
+    as element(ns1:OutputParameters) {
+        <ns1:OutputParameters>
+            <ns1:P_CODE>{ data($eLoggerResponse1/Code) }</ns1:P_CODE>
+        </ns1:OutputParameters>
+};
+
+declare variable $eLoggerResponse1 as element(ns0:eLoggerResponse) external;
+
+xf:LoggerResponse($eLoggerResponse1)

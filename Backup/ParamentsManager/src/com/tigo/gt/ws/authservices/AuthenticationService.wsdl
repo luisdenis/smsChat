@@ -1,0 +1,65 @@
+<wsdl:definitions
+     name="AuthenticationService"
+     targetNamespace="http://authservices.ws.gt.tigo.com/"
+     xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://authservices.ws.gt.tigo.com/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:types>
+        <xs:schema targetNamespace="http://authservices.ws.gt.tigo.com/" version="1.0" xmlns:tns="http://authservices.ws.gt.tigo.com/"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:complexType name="userInformationResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="alias" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bussinessPhone" type="xs:string"/>
+                    <xs:element minOccurs="0" name="department" type="xs:string"/>
+                    <xs:element minOccurs="0" name="email" type="xs:string"/>
+                    <xs:element minOccurs="0" name="errorMessage" type="xs:string"/>
+                    <xs:element minOccurs="0" name="firt" type="xs:string"/>
+                    <xs:element minOccurs="0" name="groups" type="tns:userInformationGroups"/>
+                    <xs:element minOccurs="0" name="last" type="xs:string"/>
+                    <xs:element minOccurs="0" name="mobilePhone" type="xs:string"/>
+                    <xs:element minOccurs="0" name="title" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="userInformationGroups">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="group" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="requestUserInfo">
+        <wsdl:part name="ldapId" type="xsd:int"/>
+        <wsdl:part name="user" type="xsd:string"/>
+        <wsdl:part name="password" type="xsd:string"/>
+    </wsdl:message>
+    <wsdl:message name="requestUserInfoResponse">
+        <wsdl:part name="userInfo" type="tns:userInformationResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="AuthService">
+        <wsdl:operation name="requestUserInfo">
+            <wsdl:input name="requestUserInfo" message="tns:requestUserInfo"/>
+            <wsdl:output name="requestUserInfoResponse" message="tns:requestUserInfoResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AuthenticationServiceSoapBinding" type="tns:AuthService">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="requestUserInfo">
+            <soap:operation style="rpc" soapAction=""/>
+            <wsdl:input name="requestUserInfo">
+                <soap:body use="literal" namespace="http://authservices.ws.gt.tigo.com/"/>
+            </wsdl:input>
+            <wsdl:output name="requestUserInfoResponse">
+                <soap:body use="literal" namespace="http://authservices.ws.gt.tigo.com/"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AuthenticationService">
+        <wsdl:port name="AuthServicePort" binding="tns:AuthenticationServiceSoapBinding">
+            <soap:address location="http://DSFCIS-SRV:8380/authservices/AuthService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
